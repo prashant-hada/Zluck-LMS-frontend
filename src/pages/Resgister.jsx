@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { loginSuccess } from "../features/user/userSlice";
 import { useState } from "react";
 import { PuffLoader } from "react-spinners";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function Register() {
   const [sumbitOngoing, setSubmitOngoing] = useState (false);
@@ -34,8 +34,7 @@ export default function Register() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100 gap-6">
-      <h1>ILib: Your go to LMS </h1>
+    <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-md w-96">
         <h2 className="text-2xl font-bold text-center text-gray-700 mb-6">Register</h2>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -106,6 +105,16 @@ export default function Register() {
             }
           </button>
         </form>
+
+        {/* Register Link */}
+      <div className="text-center mt-4">
+        <p className="text-sm text-gray-600">
+          Already Registered?{" "}
+          <Link to="/login" className="text-indigo-600 hover:underline">
+            Sign In
+          </Link>
+        </p>
+      </div>
       </div>
     </div>
   );
