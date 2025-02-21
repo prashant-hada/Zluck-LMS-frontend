@@ -1,5 +1,5 @@
 import { useMutation } from "@tanstack/react-query"
-import {userLogin, userRegister} from "./api"
+import {userLogin, userLogout, userRegister} from "./api"
 
 export function useLogin(){
     return useMutation({
@@ -19,6 +19,16 @@ export function useRegister(){
         onSettled:(data, error)=>{
             if(error)console.error(error);
             console.log(data);
+        }
+    })
+}
+
+export function useLogout(){
+    return useMutation({
+        mutationFn: ()=> userLogout(),
+
+        onSettled:(_, error)=>{
+            if(error)console.error(error);
         }
     })
 }
