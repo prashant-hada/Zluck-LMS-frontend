@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { useLogin } from "../services/mutation";
 
 export default function Login() {
   const {
@@ -7,8 +8,22 @@ export default function Login() {
     formState: { errors },
   } = useForm();
 
+  const loginMutation = useLogin()
+
   const onSubmit = (data) => {
     console.log("Login Data:", data);
+    loginMutation.mutate(data, {
+      onSuccess: (response) => {
+        console.log("Login successful:", response);
+        // Store user info in local state, Redux, or context
+        // Navigate to dashboard or home page
+      },
+      onError: (error) => {
+        console.error("Login failed:", error);
+      },
+    });
+  
+
   };
 
   return (
