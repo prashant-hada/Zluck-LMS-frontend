@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { useRegister } from "../services/mutation";
 
 export default function Register() {
   const {
@@ -6,9 +7,20 @@ export default function Register() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const registerMutation = useRegister()
 
   const onSubmit = (data) => {
     console.log("Register Data:", data);
+    registerMutation.mutate(data, {
+      onSuccess: (response) => {
+        console.log("Registration successful:", response);
+        // Store user info in local state, Redux, or context
+        // Navigate to dashboard or home page
+      },
+      onError: (error) => {
+        console.error("Registration failed:", error);
+      },
+    });
   };
 
   return (
