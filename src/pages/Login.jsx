@@ -38,8 +38,7 @@ export default function Login() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100 gap-4">
-      <h1>ILib: Your go to LMS </h1>
+    <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-md w-96">
         <h2 className="text-2xl font-bold text-center text-gray-700 mb-6">Login</h2>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -88,7 +87,7 @@ export default function Login() {
         <p className="text-sm text-gray-600">
           New to this plaform?{" "}
           <Link to="/register" className="text-indigo-600 hover:underline">
-            Register Now
+            Sign Up Now
           </Link>
         </p>
       </div>
