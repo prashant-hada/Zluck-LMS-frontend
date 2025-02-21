@@ -13,3 +13,8 @@ export const userRegister = async(data)=>{
     const response = (await AxiosInstance.post('user/register', data))?.data;
     return response;
 }
+
+export const userLogout = async () => {
+    const response = await AxiosInstance.post("user/logout", {}, { withCredentials: true });
+    return response.data;
+};

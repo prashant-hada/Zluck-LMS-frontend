@@ -1,8 +1,12 @@
-import React from 'react'
+
+import LogoutButton from '../components/LogoutButton'
 
 const Home = () => {
   return (
-    <div>Home Page</div>
+    <div className='flex items-center justify-around'>
+        <h1>Home page</h1>
+        <LogoutButton />
+    </div>
   )
 }
 
