@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { logout } from "../features/user/userSlice";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
-import { useLogout } from "../hooks/useLogout"; // Import the mutation hook
+import { useLogout } from "../services/mutation"; // Import the mutation hook
 
 const LogoutButton = ({ style = "" }) => {
   const dispatch = useDispatch();
